@@ -1,0 +1,66 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x133e04170 .scope module, "stimulus" "stimulus" 2 3;
+ .timescale -9 -12;
+v0x133e14a00_0 .var "x", 0 0;
+v0x133e14aa0_0 .var "y", 0 0;
+v0x133e14b50_0 .net "z", 0 0, L_0x133e14f80;  1 drivers
+S_0x133e042f0 .scope module, "abc" "comparator" 2 8, 3 1 0, S_0x133e04170;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "x";
+    .port_info 1 /INPUT 1 "y";
+    .port_info 2 /OUTPUT 1 "z";
+L_0x133e14c20 .functor NOT 1, v0x133e14a00_0, C4<0>, C4<0>, C4<0>;
+L_0x133e14cf0 .functor NOT 1, v0x133e14aa0_0, C4<0>, C4<0>, C4<0>;
+L_0x133e14da0 .functor AND 1, v0x133e14a00_0, v0x133e14aa0_0, C4<1>, C4<1>;
+L_0x133e14e50 .functor AND 1, L_0x133e14c20, L_0x133e14cf0, C4<1>, C4<1>;
+L_0x133e14f80 .functor OR 1, L_0x133e14da0, L_0x133e14e50, C4<0>, C4<0>;
+v0x133e04510_0 .net "p", 0 0, L_0x133e14da0;  1 drivers
+v0x133e145c0_0 .net "q", 0 0, L_0x133e14e50;  1 drivers
+v0x133e14660_0 .net "x", 0 0, v0x133e14a00_0;  1 drivers
+v0x133e14710_0 .net "x_", 0 0, L_0x133e14c20;  1 drivers
+v0x133e147b0_0 .net "y", 0 0, v0x133e14aa0_0;  1 drivers
+v0x133e14890_0 .net "y_", 0 0, L_0x133e14cf0;  1 drivers
+v0x133e14930_0 .net "z", 0 0, L_0x133e14f80;  alias, 1 drivers
+    .scope S_0x133e04170;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x133e14a00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x133e14aa0_0, 0, 1;
+    %delay 40000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x133e14a00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x133e14aa0_0, 0, 1;
+    %delay 40000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x133e14a00_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x133e14aa0_0, 0, 1;
+    %delay 40000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x133e14a00_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x133e14aa0_0, 0, 1;
+    %delay 80000, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x133e04170;
+T_1 ;
+    %vpi_call 2 24 "$monitor", "x=%d,y=%d,z=%d \012", v0x133e14a00_0, v0x133e14aa0_0, v0x133e14b50_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "stimulus.v";
+    "./comparator.v";

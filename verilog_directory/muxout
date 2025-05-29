@@ -1,0 +1,137 @@
+#! /opt/homebrew/Cellar/icarus-verilog/12.0/bin/vvp
+:ivl_version "12.0 (stable)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/system.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_sys.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/vhdl_textio.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/v2005_math.vpi";
+:vpi_module "/opt/homebrew/Cellar/icarus-verilog/12.0/lib/ivl/va_math.vpi";
+S_0x12e706c40 .scope module, "mux4to1_tb" "mux4to1_tb" 2 4;
+ .timescale -9 -12;
+v0x12e723af0_0 .var "i0", 0 0;
+v0x12e723b80_0 .var "i1", 0 0;
+v0x12e723c10_0 .var "i2", 0 0;
+v0x12e723ca0_0 .var "i3", 0 0;
+v0x12e723d50_0 .var "selection_line", 1 0;
+v0x12e723e20_0 .net "y", 0 0, L_0x12e7252e0;  1 drivers
+S_0x12e706db0 .scope module, "abc" "mux4to1" 2 10, 3 1 0, S_0x12e706c40;
+ .timescale 0 0;
+    .port_info 0 /INPUT 1 "i0";
+    .port_info 1 /INPUT 1 "i1";
+    .port_info 2 /INPUT 1 "i2";
+    .port_info 3 /INPUT 1 "i3";
+    .port_info 4 /INPUT 2 "selection_line";
+    .port_info 5 /OUTPUT 1 "y";
+L_0x12e723fd0 .functor NOT 1, L_0x12e723ed0, C4<0>, C4<0>, C4<0>;
+L_0x12e724080 .functor AND 1, v0x12e723af0_0, L_0x12e723fd0, C4<1>, C4<1>;
+L_0x12e724230 .functor NOT 1, L_0x12e724190, C4<0>, C4<0>, C4<0>;
+L_0x12e7242e0 .functor AND 1, L_0x12e724080, L_0x12e724230, C4<1>, C4<1>;
+L_0x12e724530 .functor AND 1, v0x12e723b80_0, L_0x12e724410, C4<1>, C4<1>;
+L_0x12e7246c0 .functor NOT 1, L_0x12e724620, C4<0>, C4<0>, C4<0>;
+L_0x12e724770 .functor AND 1, L_0x12e724530, L_0x12e7246c0, C4<1>, C4<1>;
+L_0x12e7248a0 .functor OR 1, L_0x12e7242e0, L_0x12e724770, C4<0>, C4<0>;
+L_0x12e724a30 .functor NOT 1, L_0x12e724990, C4<0>, C4<0>, C4<0>;
+L_0x12e724b30 .functor AND 1, v0x12e723c10_0, L_0x12e724a30, C4<1>, C4<1>;
+L_0x12e724c80 .functor AND 1, L_0x12e724b30, L_0x12e724be0, C4<1>, C4<1>;
+L_0x12e724df0 .functor OR 1, L_0x12e7248a0, L_0x12e724c80, C4<0>, C4<0>;
+L_0x12e7244b0 .functor AND 1, v0x12e723ca0_0, L_0x12e724ea0, C4<1>, C4<1>;
+L_0x12e725230 .functor AND 1, L_0x12e7244b0, L_0x12e725190, C4<1>, C4<1>;
+L_0x12e7252e0 .functor OR 1, L_0x12e724df0, L_0x12e725230, C4<0>, C4<0>;
+v0x12e704c90_0 .net *"_ivl_1", 0 0, L_0x12e723ed0;  1 drivers
+v0x12e7226d0_0 .net *"_ivl_10", 0 0, L_0x12e7242e0;  1 drivers
+v0x12e722770_0 .net *"_ivl_13", 0 0, L_0x12e724410;  1 drivers
+v0x12e722820_0 .net *"_ivl_14", 0 0, L_0x12e724530;  1 drivers
+v0x12e7228d0_0 .net *"_ivl_17", 0 0, L_0x12e724620;  1 drivers
+v0x12e7229c0_0 .net *"_ivl_18", 0 0, L_0x12e7246c0;  1 drivers
+v0x12e722a70_0 .net *"_ivl_2", 0 0, L_0x12e723fd0;  1 drivers
+v0x12e722b20_0 .net *"_ivl_20", 0 0, L_0x12e724770;  1 drivers
+v0x12e722bd0_0 .net *"_ivl_22", 0 0, L_0x12e7248a0;  1 drivers
+v0x12e722ce0_0 .net *"_ivl_25", 0 0, L_0x12e724990;  1 drivers
+v0x12e722d90_0 .net *"_ivl_26", 0 0, L_0x12e724a30;  1 drivers
+v0x12e722e40_0 .net *"_ivl_28", 0 0, L_0x12e724b30;  1 drivers
+v0x12e722ef0_0 .net *"_ivl_31", 0 0, L_0x12e724be0;  1 drivers
+v0x12e722fa0_0 .net *"_ivl_32", 0 0, L_0x12e724c80;  1 drivers
+v0x12e723050_0 .net *"_ivl_34", 0 0, L_0x12e724df0;  1 drivers
+v0x12e723100_0 .net *"_ivl_37", 0 0, L_0x12e724ea0;  1 drivers
+v0x12e7231b0_0 .net *"_ivl_38", 0 0, L_0x12e7244b0;  1 drivers
+v0x12e723340_0 .net *"_ivl_4", 0 0, L_0x12e724080;  1 drivers
+v0x12e7233d0_0 .net *"_ivl_41", 0 0, L_0x12e725190;  1 drivers
+v0x12e723480_0 .net *"_ivl_42", 0 0, L_0x12e725230;  1 drivers
+v0x12e723530_0 .net *"_ivl_7", 0 0, L_0x12e724190;  1 drivers
+v0x12e7235e0_0 .net *"_ivl_8", 0 0, L_0x12e724230;  1 drivers
+v0x12e723690_0 .net "i0", 0 0, v0x12e723af0_0;  1 drivers
+v0x12e723730_0 .net "i1", 0 0, v0x12e723b80_0;  1 drivers
+v0x12e7237d0_0 .net "i2", 0 0, v0x12e723c10_0;  1 drivers
+v0x12e723870_0 .net "i3", 0 0, v0x12e723ca0_0;  1 drivers
+v0x12e723910_0 .net "selection_line", 1 0, v0x12e723d50_0;  1 drivers
+v0x12e7239c0_0 .net "y", 0 0, L_0x12e7252e0;  alias, 1 drivers
+L_0x12e723ed0 .part v0x12e723d50_0, 0, 1;
+L_0x12e724190 .part v0x12e723d50_0, 1, 1;
+L_0x12e724410 .part v0x12e723d50_0, 0, 1;
+L_0x12e724620 .part v0x12e723d50_0, 1, 1;
+L_0x12e724990 .part v0x12e723d50_0, 0, 1;
+L_0x12e724be0 .part v0x12e723d50_0, 1, 1;
+L_0x12e724ea0 .part v0x12e723d50_0, 0, 1;
+L_0x12e725190 .part v0x12e723d50_0, 1, 1;
+    .scope S_0x12e706c40;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12e723af0_0, 0, 1;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v0x12e723b80_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12e723c10_0, 0, 1;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v0x12e723ca0_0, 0, 1;
+    %delay 20000, 0;
+    %vpi_call 2 15 "$display", " I0 = %d, I1= %d, I2 = %d, I3 = %d  \012", v0x12e723af0_0, v0x12e723b80_0, v0x12e723c10_0, v0x12e723ca0_0 {0 0 0};
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %delay 20000, 0;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %pushi/vec4 0, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %delay 20000, 0;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 1, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %pushi/vec4 1, 0, 1;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %store/vec4 v0x12e723d50_0, 4, 1;
+    %delay 20000, 0;
+    %end;
+    .thread T_0;
+    .scope S_0x12e706c40;
+T_1 ;
+    %vpi_call 2 26 "$monitor", "S1 = %b , S0 = %b , OUTPUT = %b\012", &PV<v0x12e723d50_0, 1, 1>, &PV<v0x12e723d50_0, 0, 1>, v0x12e723e20_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "mux4to1_tb.v";
+    "./mux4to1.v";
